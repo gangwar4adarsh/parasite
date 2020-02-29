@@ -11,8 +11,52 @@
     <title>HOME</title>
   </head>
   <body>
+
+    <div class="row border">
+
+      <div class="border border-danger">
+           <?php
+
+           $custom_logo_id = get_theme_mod( 'custom_logo' );
+           $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+           if ( has_custom_logo() ) { ?>
+                <img src="<?php echo esc_url( $logo[0] ) ?>" >
+           <?php } else {
+                echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+        }?>
+      </div>
+
+      <div class="border border-success">
+        <?php wp_nav_menu("menu-1") ?>
+      </div>
+    </div>
+
+
+
+
+
+
     <h1>Hello, Tehri</h1>
-    <h2>New Tehri is a city and a municipal board in Tehri Garhwal District in the Indian state of Uttarakhand. It is the administrative seat of Tehri Garhwal District. This urban municipality area has 11 wards, from Vidhi Vihar to Vishwakarma Puram (Koti colony). Mrs Seema Krishali is chairperson of Nagar Palika tehri, She is the First Lady Chairperson of Tehri Municipal corporate. She won this position as an independent. defeating candidates of Nationals parties like congress. Shri Umesh Gusain of BJP was chairman of the Tehri Nagarpalika before Mrs Seema krishali. He is the only Chairman who won this seat two times consecutively in 61 years. Tehri now comes under the Tehri assembly seat of Uttarakhand and the Tehri Lok Sabha seat of India, which are represented by Dhan Singh Negi (Bhartiya Janta Party) and Mala Rajya Laxmi Shah (Bhartiya Janta Party) respectively</h2>
+    <h2>
+      <?php
+      while ( have_posts() ) : the_post(); ?>
+        <div class="entry-content-page">
+          <img src="<?php echo get_the_post_thumbnail_url(); ?>" width="500" height="333">
+          </div>
+        <?php endwhile; ?>
+
+    
+  </h2>
+
+  <h3>New Tehri is a city and a municipal board in Tehri Garhwal District in the Indian state of Uttarakhand. It is the administrative seat of Tehri Garhwal District. This urban municipality area has 11 wards, from Vidhi Vihar to Vishwakarma Puram (Koti colony). Mrs Seema Krishali is chairperson of Nagar Palika tehri, She is the First Lady Chairperson of Tehri Municipal corporate. She won this position as an independent. defeating candidates of Nationals parties like congress. Shri Umesh Gusain of BJP was chairman of the Tehri Nagarpalika before Mrs Seema krishali. He is the only Chairman who won this seat two times consecutively in 61 years. Tehri now comes under the Tehri assembly seat of Uttarakhand and the Tehri Lok Sabha seat of India, which are represented by Dhan Singh Negi (Bhartiya Janta Party) and Mala Rajya Laxmi Shah (Bhartiya Janta Party) respectively</h3>
+</body>
+
+
+
+
+
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
