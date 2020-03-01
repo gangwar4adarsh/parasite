@@ -42,7 +42,7 @@
       <?php
       while ( have_posts() ) : the_post(); ?>
         <div class="entry-content-page">
-          <img src="<?php echo get_the_post_thumbnail_url(); ?>" width="500" height="333">
+          <img src="<?php echo get_the_post_thumbnail_url(); ?>" width="800" height="333">
           </div>
         <?php endwhile; ?>
 
